@@ -151,3 +151,80 @@
 .ring-primary {
   --tw-ring-color: hsl(var(--color-primary));
 }
+
+@layer utilities {
+  @keyframes grow-line {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 2.5rem;
+    }
+  }
+
+  .animate-grow-line {
+    animation: grow-line 1s ease-out forwards;
+  }
+
+  .animate-bounce {
+    animation: bounce 1s infinite;
+  }
+}
+
+@layer utilities {
+  @keyframes sophia-bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  .animate-sophia-bounce {
+    animation: sophia-bounce 1s infinite;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in {
+  animation: fade-in 1s ease-out forwards;
+}
+@keyframes fade-loop-1 {
+  0%, 100% { opacity: 0; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fade-loop-2 {
+  0%, 100% { opacity: 0; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fade-loop-3 {
+  0%, 100% { opacity: 0; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-1 {
+  animation: fade-loop-1 2s ease-in-out infinite;
+}
+
+.animate-fade-2 {
+  animation: fade-loop-2 3s ease-in-out infinite;
+}
+
+.animate-fade-3 {
+  animation: fade-loop-3 4s ease-in-out infinite;
+}
+
+
+
+

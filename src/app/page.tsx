@@ -1,4 +1,5 @@
-import Hero from "@/components/Hero/hero";
+
+import AboutMe from "@/components/about/About";
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar.tsx/page";
 
@@ -7,7 +8,9 @@ const Home = () => {
     <>
       <Navbar />
       <Sidebar />
-      <Hero />
+      <div className="mt-20">
+        <AboutMe />
+      </div>
     </>
    );
 }

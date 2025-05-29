@@ -31,8 +31,8 @@ export default function ColorSwitcher() {
 
   return (
     <Popover>
-      <PopoverTrigger className="fixed top-4 left-4 z-50 bg-muted p-2 rounded-full shadow-md">
-        <Settings className="w-5 h-5 rotate-x-180" />
+      <PopoverTrigger className="relative top-0 left-0 z-50 bg-muted p-2 rounded-full shadow-md">
+        <Settings className="w-5 h-5 animate-spin" />
       </PopoverTrigger>
       <PopoverContent className="w-60 p-4 rounded-xl shadow-lg">
         <h2 className="text-lg font-semibold mb-2">Theme Color</h2>

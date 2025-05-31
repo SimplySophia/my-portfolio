@@ -83,7 +83,7 @@ const SidebarWithHero = () => {
               <Link
                 key={idx}
                 href={href}
-                className="border-3 border-primary shadow-[0_0_10px_hsl(var(--color-primary))] w-[40px] h-[40px] rounded-full p-2 hover:scale-125 transition-transform flex items-center justify-center"
+                className="border-primary shadow-[0_0_10px_hsl(var(--color-primary))] w-[40px] h-[40px] rounded-full p-2 hover:scale-125 transition-transform flex items-center justify-center"
               >
                 {icon}
               </Link>

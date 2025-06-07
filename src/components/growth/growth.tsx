@@ -1,3 +1,5 @@
+"use client";
+
 const Growth = () => {
     return ( 
         <div className="mt-15 bg-secondary border-3 border-primary shadow-[0_0_10px_hsl(var(--color-primary))] w-60 h-75 lg:h-100 rounded-b-full rounded-r-full px-4 lg:px-8 py-2 lg:py-15">

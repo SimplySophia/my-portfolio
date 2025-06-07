@@ -1,4 +1,5 @@
 "use client";
+
 import SectionHeading from "../helper/SectionHeading";
 const AboutMe = () => {
     return ( 

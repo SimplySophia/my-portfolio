@@ -1,5 +1,7 @@
 
 import AboutMe from "@/components/about/About";
+import ContactPage from "@/components/contact/Contact";
+import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/Navbar";
 import FeaturedProjects from "@/components/projects/FeaturedProjects";
 import Sidebar from "@/components/Sidebar.tsx/page";
@@ -15,6 +17,8 @@ const Home = () => {
       </div>
       <Skills />
       <FeaturedProjects />
+      <ContactPage/>
+      <Footer />
     </>
    );
 }

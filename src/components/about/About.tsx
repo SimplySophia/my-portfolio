@@ -9,11 +9,13 @@ const AboutMe = () => {
     return ( 
         <section 
            aria-labelledby="about-heading"
-      className="bg-base-200 min-h-screen px-4 md:px-8 py-8 max-w-7xl mx-auto lg:pl-[24rem] flex"
+      className="w-full px-4 md:px-8 py-8 max-w-5xl mx-auto mt-8 "
         >
         <div className="flex flex-col items-start">
 
             <SectionHeading heading="About" scrollToId="next-section"/>
+            <div className="flex flex-col lg:flex-row items-center justify-center max-w-7xl mx-auto gap-10">
+
             <div id="next-section" className="pt-10 animate-fade-in duration-700 flex flex-col gap-4 max-w-2xl">
                 <div className="w-full max-w-2xl mx-auto flex flex-col items-start">
                     <h1 className="text-2xl md:text-4xl font-bold text-primary" id="about-heading">
@@ -27,8 +29,7 @@ const AboutMe = () => {
                     </p>
                 </div>
             </div>
-        </div>
-        <div>
+             <div>
                     <Image 
                      src="/images/me.png"
                      alt="me"
@@ -37,6 +38,8 @@ const AboutMe = () => {
                      className="rounded"
                     />
                 </div>
+            </div>
+        </div>
         </section>
      );
 }

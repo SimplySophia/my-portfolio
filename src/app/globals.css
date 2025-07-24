@@ -136,6 +136,9 @@
 [data-color="orange"] {
   --color-primary: 30 100% 50%;
 }
+[data-color="red"] {
+  --color-primary: 10 100% 30%;
+}
 
 /* Manually define utility classes */
 .bg-primary {
@@ -224,7 +227,3 @@
 .animate-fade-3 {
   animation: fade-loop-3 4s ease-in-out infinite;
 }
-
-
-
-

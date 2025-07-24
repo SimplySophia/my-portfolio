@@ -9,7 +9,7 @@ const ContactPage = () => {
         >
             <div className="flex flex-col gap-8 items-start">
 
-            <SectionHeading heading="About" scrollToId="next-section"/>
+            <SectionHeading heading="Contact Me" scrollToId="next-section"/>
             <div id="next-section" className="pt-10 animate-fade-in duration-700 flex flex-col gap-4 max-w-2xl">
                 <div className="w-full max-w-2xl mx-auto flex flex-col items-start">
                     <form action="">

@@ -1,13 +1,17 @@
 "use client";
+import Image from "next/image";
 
 import SectionHeading from "../helper/SectionHeading";
+
+
+
 const AboutMe = () => {
     return ( 
         <section 
            aria-labelledby="about-heading"
-      className="bg-base-200 min-h-screen px-4 md:px-8 py-8 max-w-7xl mx-auto lg:pl-[24rem]"
+      className="bg-base-200 min-h-screen px-4 md:px-8 py-8 max-w-7xl mx-auto lg:pl-[24rem] flex"
         >
-        <div className="flex flex-col gap-8 items-start">
+        <div className="flex flex-col items-start">
 
             <SectionHeading heading="About" scrollToId="next-section"/>
             <div id="next-section" className="pt-10 animate-fade-in duration-700 flex flex-col gap-4 max-w-2xl">
@@ -24,6 +28,15 @@ const AboutMe = () => {
                 </div>
             </div>
         </div>
+        <div>
+                    <Image 
+                     src="/images/me.png"
+                     alt="me"
+                     width={500}
+                     height={500}
+                     className="rounded"
+                    />
+                </div>
         </section>
      );
 }

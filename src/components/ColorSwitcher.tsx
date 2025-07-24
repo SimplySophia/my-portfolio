@@ -9,6 +9,7 @@ const colors = [
   { name: 'green', className: 'bg-green-700' },
   { name: 'blue', className: 'bg-blue-700' },
   { name: 'orange', className: 'bg-orange-700' },
+  {name: 'red', className: 'bg-red-900' }
 ]
 
 export default function ColorSwitcher() {

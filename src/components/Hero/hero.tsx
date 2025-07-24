@@ -4,16 +4,17 @@ import { Mail, Send } from "lucide-react";
 import Link from "next/link";
 import SectionHeading from "../helper/SectionHeading";
 import Clock from "../Clock";
+import Growth from "../growth/growth";
 
 const Hero = () => {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="w-full px-4 md:px-8 py-8 max-w-5xl mx-auto"
+      className="w-full px-4 md:px-8 py-8 max-w-5xl mx-auto mt-8"
     >
       <SectionHeading heading="Introduce" scrollToId="next-section" />
-
-      <div id="next-section" className="pt-10 animate-fade-in duration-700">
+        <div className="flex flex-col lg:flex-row items-center justify-center max-w-7xl mx-auto gap-10">
+        <div id="next-section" className="pt-10 animate-fade-in duration-700">
         <div className="w-full max-w-2xl flex flex-col items-start">
           <h1
             id="hero-heading"
@@ -23,11 +24,8 @@ const Hero = () => {
           </h1>
 
           <p className="py-2 px-2 text-gray-400 leading-relaxed text-base md:text-lg">
-            A frontend developer, I bring designs to life using modern tools like
-            React and Next.js, ensuring every interaction feels just right.
-            Building intuitive, responsive interfaces isn’t just my job. it’s
-            my favorite kind of problem-solving. I’m glad to have you here and
-            excited to connect and share my journey with you.
+            A frontend developer, I bring designs to life. ensuring every interaction feels just right.
+            Building intuitive, responsive interfaces isn’t just my job. it’s my favorite kind of problem-solving.
           </p>
 
           <Clock />
@@ -54,6 +52,8 @@ const Hero = () => {
             </div>
           </Link>
         </div>
+      </div>
+          <Growth />
       </div>
     </section>
   );

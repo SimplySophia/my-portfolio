@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ThemeToggler from "@/components/ThemeToggler";
+import MobileNav from "./MobileNav";
 
 const Navbar = () => {
     return ( 
@@ -7,7 +7,7 @@ const Navbar = () => {
             <Link href="/" className="text-2xl font-bold">
                &lt;<span className="text-primary">Sophire <span role="img" aria-label="female developer">👩🏽‍💻</span></span>/&gt;
             </Link>
-            <ThemeToggler />
+            <MobileNav />
         </div>
      );
 }

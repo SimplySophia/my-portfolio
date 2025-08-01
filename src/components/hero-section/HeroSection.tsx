@@ -7,8 +7,6 @@ import {
   Brain,
   Briefcase,
   Phone,
-  Menu,
-  X,
 } from "lucide-react";
 import Link from "next/link";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
@@ -37,7 +35,7 @@ interface HeroSectionProps {
   toggleSidebar: () => void;
 }
 
-const HeroSection: React.FC<HeroSectionProps> = ({ isOpen, toggleSidebar }) => {
+const HeroSection: React.FC<HeroSectionProps> = ({ isOpen }) => {
   return (
     <>
       {/* Sidebar */}
@@ -80,29 +78,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ isOpen, toggleSidebar }) => {
           ))}
         </div>
       </aside>
-
-      {/* Main Content */}
-      <div className="w-full flex flex-col justify-center items-center gap-12 px-4 pb-4 lg:px-12">
-        {/* Mobile Toggle */}
-        <div className="lg:hidden px-4 py-2 w-full">
-          <button
-            onClick={toggleSidebar}
-            className="text-primary flex items-center gap-2 border border-primary px-2 py-1 rounded-md"
-          >
-            {isOpen ? <X /> : <Menu />}
-            {isOpen ? "Close" : "Menu"}
-          </button>
-        </div>
-
-      </div>
-
-      {/* Mobile Overlay */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
-          onClick={toggleSidebar}
-        />
-      )}
     </>
   );
 };

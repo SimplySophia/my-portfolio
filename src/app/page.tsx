@@ -9,6 +9,7 @@ import ContactPage from '@/components/contact/Contact';
 import Footer from '@/components/footer/Footer';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero/hero';
+import CircleRipple from '@/components/helper/CircleRipple';
 
 export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -20,6 +21,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
+      <CircleRipple />
       <div className="flex flex-col lg:flex-row min-h-screen">
         {/* Sticky Sidebar for Desktop */}
         <aside className="hidden lg:block lg:sticky top-0 h-screen w-64 text-white">

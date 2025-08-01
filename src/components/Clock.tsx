@@ -27,7 +27,7 @@ const Clock = () => {
   if (!time || !date) return null; 
 
   return (
-    <div className="text-center text-sm sm:text-base text-primary font-medium mt-2 space-y-2">
+    <div className="flex flex-col items-start lg:items-center text-center text-sm sm:text-base text-primary font-medium mt-2 space-y-2">
       <p className='text-xl'>{date}</p>
       <p className='text-2xl'>{time}</p>
     </div>

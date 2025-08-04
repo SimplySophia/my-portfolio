@@ -44,11 +44,11 @@ const Skills = () => {
   return (
     <section
       aria-labelledby="about-heading"
-      className="w-full px-4 md:px-8 py-8 max-w-5xl mx-auto mt-8"
+      className="w-full px-4 md:px-8 py-8 max-w-5xl mx-auto"
     >
       <div className="flex flex-col gap-8 items-start">
         <SectionHeading heading="Expertise" scrollToId="next-section" />
-        <div id="next-section" className="pt-10 flex flex-col gap-4 max-w-2xl">
+        <div id="next-section" className="pt-10 flex flex-col gap-4 max-w-2xl px-6 md:px-12">
           <div className="shadow-[0_0_10px_hsl(var(--color-primary))] rounded-2xl border w-full px-6 md:px-12 py-4">
             <motion.div
               variants={container}

@@ -27,13 +27,13 @@ const AboutMe = () => {
   return (
     <section
       aria-labelledby="about-heading"
-      className="w-full px-4 md:px-8 py-8 max-w-5xl mx-auto mt-8"
+      className="w-full px-4 md:px-8 py-8 max-w-5xl mx-auto mt-4"
       ref={ref}
     >
       <div className="flex flex-col items-start">
         <SectionHeading heading="About" scrollToId="next-section" />
 
-        <div className="flex flex-col lg:flex-row items-center justify-center max-w-7xl mx-auto gap-10">
+        <div className="flex flex-col lg:flex-row items-center justify-center max-w-7xl mx-auto gap-2 px-6 md:px-1">
           <motion.div
             id="next-section"
             className="flex flex-col gap-2 max-w-2xl"
@@ -41,9 +41,9 @@ const AboutMe = () => {
             initial={{ opacity: 0, y: 60 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <div className="w-full max-w-2xl mx-auto flex flex-col items-start gap-3 px-2 md:px-8">
+            <div className="w-full max-w-2xl mx-auto flex flex-col items-start gap-3 px-2 md:px-8 py-11">
               {/* Floating Bold Animated Text */}
-          <div className="text-3xl md:text-5xl font-extrabold flex flex-wrap leading-tight">
+            <div className="text-3xl md:text-5xl px-2 font-extrabold flex flex-wrap leading-tight">
             {highlightedText.map((char, i) => (
               <span
                 key={i}

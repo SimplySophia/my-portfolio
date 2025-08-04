@@ -38,11 +38,11 @@ const Hero = () => {
     >
       <SectionHeading heading="Introduce" scrollToId="next-section" />
 
-      <div className="flex flex-col lg:flex-row items-center justify-center max-w-7xl mx-auto gap-10">
+      <div className="flex flex-col lg:flex-row items-center justify-center max-w-7xl mx-auto gap-2 px-2 md:px-8 py-6 md:py-1">
         {/* Left Side (Hero Text) */}
         <motion.div
           id="next-section"
-          className="pt-8 w-full max-w-2xl flex flex-col items-start gap-4"
+          className="pt-6 w-full max-w-2xl flex flex-col items-start gap-4"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -87,13 +87,13 @@ const Hero = () => {
           </motion.div>
 
           <motion.div
-            className="flex flex-col md:flex-row items-center lg:items-start mt-4 gap-4 md:gap-6"
+            className="flex flex-row md:items-center items-start mt-4 gap-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.4 }}
           >
             <Link
-              href="/talk"
+              href="/contact"
               className="text-primary font-bold text-xl flex items-center gap-2 hover:underline"
             >
               Let&apos;s Talk

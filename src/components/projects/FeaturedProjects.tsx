@@ -77,7 +77,7 @@ const FeaturedProjects = () => {
         <SectionHeading heading="Recent Works" scrollToId="next-section" />
         <div
           id="next-section"
-          className="pt-10 flex flex-col gap-4 max-w-2xl"
+          className="pt-10 flex flex-col gap-4 max-w-2xl px-6 md:px-12"
           ref={ref}
         >
           <div className="flex flex-col justify-center gap-6">

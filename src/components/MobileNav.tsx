@@ -44,11 +44,14 @@ export const MobileNavOverlay = ({ open, setOpen }: MobileNavProps) => (
             <h1 className="text-3xl font-bold text-white">Sophia Vincent</h1>
             <p className="text-lg text-gray-300">Let&apos;s connect</p>
             <a
-              href="mailto:sophire33@gmail.com"
-              className="bg-primary text-black font-semibold py-2 px-6 rounded-md hover:scale-105 transition-transform"
-            >
-              Send Email
-            </a>
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=sophire33@gmail.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-primary text-black font-semibold py-2 px-6 rounded-md hover:scale-105 transition-transform"
+>
+  Send Email
+</a>
+
           </div>
         </motion.div>
       </>

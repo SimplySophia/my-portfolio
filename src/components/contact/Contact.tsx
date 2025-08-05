@@ -11,7 +11,7 @@ const ContactPage = () => {
     <section
       aria-labelledby="contact-heading"
       className="w-full px-4 md:px-8 py-12 max-w-5xl mx-auto mt-8"
-      id="#contact"
+      id="contact"
     >
       <div className="flex flex-col gap-8 items-start">
         <SectionHeading heading="Contact Me" scrollToId="next-section" />

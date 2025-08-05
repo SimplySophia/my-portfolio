@@ -29,6 +29,7 @@ const AboutMe = () => {
       aria-labelledby="about-heading"
       className="w-full px-4 md:px-8 py-8 max-w-5xl mx-auto mt-4"
       ref={ref}
+      id="about"
     >
       <div className="flex flex-col items-start">
         <SectionHeading heading="About" scrollToId="next-section" />

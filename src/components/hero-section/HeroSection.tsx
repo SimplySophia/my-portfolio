@@ -16,12 +16,18 @@ import ColorSwitcher from "../ColorSwitcher";
 
 
 const navItems = [
-  { href: "/", label: "Home", icon: <Home className="w-6 h-6 text-primary" />, shortcut: "⌘H" },
-  { href: "/about", label: "About", icon: <User className="w-6 h-6 text-primary" />, shortcut: "⌘A" },
-  { href: "/resume", label: "Resume", icon: <Mail className="w-6 h-6 text-primary" />, shortcut: "⌘R" },
-  { href: "/skills", label: "Skills", icon: <Brain className="w-6 h-6 text-primary" />, shortcut: "⌘S" },
-  { href: "/services", label: "Services", icon: <Briefcase className="w-6 h-6 text-primary" />, shortcut: "⌘S" },
-  { href: "/contact", label: "Contact", icon: <Phone className="w-6 h-6 text-primary" />, shortcut: "⌘C" },
+  { id: "home", label: "Home", icon: <Home className="w-6 h-6 text-primary" />, shortcut: "⌘H" },
+  { id: "about", label: "About", icon: <User className="w-6 h-6 text-primary" />, shortcut: "⌘A" },
+{
+    href: "/SophiaVincent_Resume.pdf", // actual file path for resume
+    label: "Resume",
+    icon: <Mail className="w-6 h-6 text-primary" />,
+    shortcut: "⌘R",
+    download: true,
+  },  
+  { id: "skills", label: "Skills", icon: <Brain className="w-6 h-6 text-primary" />, shortcut: "⌘S" },
+  { id: "projects", label: "Projects", icon: <Briefcase className="w-6 h-6 text-primary" />, shortcut: "⌘S" },
+  { id: "contact", label: "Contact", icon: <Phone className="w-6 h-6 text-primary" />, shortcut: "⌘C" },
 ];
 
 const socialLinks = [
@@ -29,6 +35,13 @@ const socialLinks = [
   { href: "/github", icon: <FaGithub className="w-4 h-4" /> },
   { href: "/twitter", icon: <SiX className="w-4 h-4" /> },
 ];
+
+const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
 interface HeroSectionProps {
   isOpen: boolean;
@@ -52,17 +65,36 @@ const HeroSection: React.FC<HeroSectionProps> = ({ isOpen }) => {
 >
 
 
-        {navItems.map(({ href, label, icon, shortcut }) => (
-          <div key={label} className="relative group flex items-center justify-between mb-4">
-            <Link href={href} className="flex items-center gap-2">
+{navItems.map(({ id, href, label, icon, shortcut, download }) => (
+        <div key={label} className="relative group flex items-center justify-between mb-4">
+          {download ? (
+            <Link
+              href={href || "#"}
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
               {icon}
               <span className="text-sm font-semibold text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity">
                 {label}
               </span>
             </Link>
-            <CommandShortcut>{shortcut}</CommandShortcut>
-          </div>
-        ))}
+          ) : (
+            <button
+              onClick={() => scrollToSection(id!)}
+              className="flex items-center gap-2 focus:outline-none"
+            >
+              {icon}
+              <span className="text-sm font-semibold text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                {label}
+              </span>
+            </button>
+          )}
+          <CommandShortcut>{shortcut}</CommandShortcut>
+        </div>
+      ))}
+
 
         <ColorSwitcher />
 

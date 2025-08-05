@@ -1,8 +1,7 @@
 "use client";
 
 import { Mail, Send } from "lucide-react";
-import Link from "next/link";
-import SectionHeading from "../helper/SectionHeading";
+            import SectionHeading from "../helper/SectionHeading";
 import Clock from "../Clock";
 import Growth from "../growth/growth";
 import { motion } from "framer-motion";
@@ -27,6 +26,12 @@ const wordAnimation = {
   hidden: { opacity: 0, y: 20 },
   show: { opacity: 1, y: 0 },
 };
+const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
 const Hero = () => {
   const highlightedText = "Hello World!".split("");
@@ -92,25 +97,28 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.4 }}
           >
-            <Link
-              href="/contact"
+            <button
+            onClick={() => scrollToSection("contact")}
               className="text-primary font-bold text-xl flex items-center gap-2 hover:underline"
             >
               Let&apos;s Talk
               <div className="border-3 border-primary shadow-[0_0_10px_hsl(var(--color-primary))] w-[40px] h-[40px] rounded-full p-1.5">
                 <Send className="bg-base-100 animate-sophia-bounce" />
               </div>
-            </Link>
+            </button>
 
-            <Link
-              href="/resume"
-              className="text-primary font-bold text-xl flex items-center gap-2 hover:underline"
+            <a
+              href="/SophiaVincent_Resume.pdf"
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+             className="text-primary font-bold text-xl flex items-center gap-2 hover:underline"
             >
               Resume
               <div className="border-3 border-primary shadow-[0_0_10px_hsl(var(--color-primary))] w-[40px] h-[40px] rounded-full p-1.5">
                 <Mail className="bg-base-100 animate-sophia-bounce" />
               </div>
-            </Link>
+            </a>
           </motion.div>
         </motion.div>
 

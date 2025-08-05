@@ -45,6 +45,7 @@ const Skills = () => {
     <section
       aria-labelledby="about-heading"
       className="w-full px-4 md:px-8 py-8 max-w-5xl mx-auto"
+      id="skills"
     >
       <div className="flex flex-col gap-8 items-start">
         <SectionHeading heading="Expertise" scrollToId="next-section" />

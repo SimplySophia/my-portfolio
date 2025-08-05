@@ -72,6 +72,7 @@ const FeaturedProjects = () => {
     <section
       aria-labelledby="projects-heading"
       className="w-full px-4 md:px-8 py-12 max-w-5xl mx-auto"
+      id="projects"
     >
       <div className="flex flex-col gap-8 items-start">
         <SectionHeading heading="Recent Works" scrollToId="next-section" />

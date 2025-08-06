@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from "react";
 import HeroSection from '@/components/hero-section/HeroSection';
 import AboutMe from '@/components/about/About';
 import Skills from '@/components/skills/skills';
@@ -10,9 +10,22 @@ import Footer from '@/components/footer/Footer';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero/hero';
 import CircleRipple from '@/components/helper/CircleRipple';
+import Loader from '@/components/Loader';
 
 export default function Home() {
+  const [loading, setLoading] = useState(true);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // simulate load time (2s)
+    return () => clearTimeout(timeout);
+  }, []);
+
+    if (loading) return <Loader />;
+
 
   const toggleSidebar = () => {
     setIsSidebarOpen((prev) => !prev);

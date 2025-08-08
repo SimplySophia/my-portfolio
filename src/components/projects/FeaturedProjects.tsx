@@ -40,6 +40,14 @@ const projects: Project[] = [
     tools: ["HTML", "CSS", "JavaScript"],
   },
   {
+    title: "Learning hub",
+    description: "A simple educational platform that offers a variety of courses and resources for learners.",
+    image: "/images/brain.png",
+    link: "https://learning-hub-seven-alpha.vercel.app/",
+    repo: "",
+    tools: ["React", "Tailwind CSS", "TypeScript"],
+  },
+  {
     title: "Dont List",
     description: "A simple app that allows users to create and manage a list of things they should avoid doing.",
     image: "/images/dont-list.png",

@@ -20,7 +20,7 @@ export default function Home() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoading(false);
-    }, 2000); // simulate load time (2s)
+    }, 2000); 
     return () => clearTimeout(timeout);
   }, []);
 

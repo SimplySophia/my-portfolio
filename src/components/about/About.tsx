@@ -22,7 +22,14 @@ const AboutMe = () => {
     }
   }, [isInView, textControls, imageControls]);
 
-  const highlightedText = "Hard-Hitting Frontend Developer".split("");
+  // Animation variants for each letter
+  const letterVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  // Words for the heading
+  const words = ["Hard-Hitting", "Frontend", "Developer"];
 
   return (
     <section
@@ -35,6 +42,7 @@ const AboutMe = () => {
         <SectionHeading heading="About" scrollToId="next-section" />
 
         <div className="flex flex-col lg:flex-row items-center justify-center max-w-7xl mx-auto gap-2 px-6 md:px-1">
+          {/* Text Section */}
           <motion.div
             id="next-section"
             className="flex flex-col gap-2 max-w-2xl"
@@ -43,31 +51,43 @@ const AboutMe = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
             <div className="w-full max-w-2xl mx-auto flex flex-col items-start gap-3 px-2 md:px-8 py-11">
-              {/* Floating Bold Animated Text */}
-            <div className="text-3xl md:text-5xl px-2 font-extrabold flex flex-wrap leading-tight">
-            {highlightedText.map((char, i) => (
-              <span
-                key={i}
-                className="text-secondary animate-float"
-                style={{
-                  textShadow: '0 0 10px hsl(var(--color-primary))',
-                  animationDelay: `${i * 0.05}s`,
-                  display: 'inline-block',
-                }}
-              >
-                {char === " " ? "\u00A0" : char}
-              </span>
-            ))}
-          </div>
+              
+              {/* Floating Bold Animated Heading */}
+              <div className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold flex flex-wrap gap-x-2 leading-tight">
+                {words.map((word, wi) => (
+                  <span key={wi} className="flex whitespace-nowrap">
+                    {word.split("").map((char, i) => (
+                      <motion.span
+                        key={i}
+                        variants={letterVariants}
+                        initial="hidden"
+                        animate="visible"
+                        transition={{
+                          duration: 0.05,
+                          delay: (wi * 10 + i) * 0.05,
+                        }}
+                        className="text-secondary"
+                        style={{
+                          textShadow: "0 0 10px hsl(var(--color-primary))",
+                          display: "inline-block",
+                        }}
+                      >
+                        {char}
+                      </motion.span>
+                    ))}
+                  </span>
+                ))}
+              </div>
 
+              {/* Paragraphs */}
               <motion.p
                 className="py-2 px-2 text-gray-400 leading-relaxed text-base md:text-lg"
                 initial={{ opacity: 0, y: 60 }}
                 animate={textControls}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
               >
-                Fueled by curiosity and driven by a passion for technology, I&apos;m
-                always exploring how clean code and intuitive design can solve
+                Fueled by curiosity and driven by a passion for technology,
+                I&apos;m always exploring how clean code and intuitive design can solve
                 real-world problems. I approach every project with a builder&apos;s
                 mindset crafting digital experiences that are functional,
                 beautiful, and meaningful.
@@ -87,6 +107,7 @@ const AboutMe = () => {
             </div>
           </motion.div>
 
+          {/* Image Section */}
           <motion.div
             animate={imageControls}
             initial={{ opacity: 0, x: 60 }}

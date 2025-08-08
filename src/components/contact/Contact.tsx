@@ -1,11 +1,29 @@
-'use client';
+"use client";
 
 import { FaWhatsapp } from "react-icons/fa";
 import SectionHeading from "../helper/SectionHeading";
 import { Mail } from "lucide-react";
+import { motion } from "framer-motion";
 
 const ContactPage = () => {
-  const highlightedText = "I engineer web magic that clicks before you know why.".split("");
+  // Split into words instead of characters
+  const highlightedWords = [
+    "I",
+    "engineer",
+    "web",
+    "magic",
+    "that",
+    "clicks",
+    "before",
+    "you",
+    "know",
+    "why."
+  ];
+
+  const letterVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
 
   return (
     <section
@@ -21,43 +39,57 @@ const ContactPage = () => {
           className="pt-10 animate-fade-in duration-700 flex flex-col gap-6 max-w-3xl w-full px-6 md:px-12"
         >
           {/* Contact Text */}
-          <div className="text-2xl md:text-4xl font-extrabold text-primary" style={{ textShadow: '0 0 10px hsl(var(--color-primary))' }}>
+          <div
+            className="text-2xl md:text-4xl font-extrabold text-primary"
+            style={{ textShadow: "0 0 10px hsl(var(--color-primary))" }}
+          >
             Let&apos;s bring your idea to life.
           </div>
-          <div className="flex flex-col md:flex-row items-center gap-5">
-          {/* Mail Button */}
-          <a
-            href="mailto:sophire33@gmail.com"
-            className="flex gap-2 mt-6 bg-primary-foreground text-primary text-center border border-primary rounded-full px-6 py-3 font-medium shadow-[0_0_10px_hsl(var(--color-primary))] hover:scale-105 transition"
-          >
-            Send Me an Email
-            <Mail />
-          </a>
 
-          {/* WhatsApp */}
-          <a
-            href="https://wa.me/2349160132596"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 mt-6 bg-primary-foreground text-primary text-center border border-primary rounded-full px-6 py-3 font-medium shadow-[0_0_10px_hsl(var(--color-primary))] hover:scale-105 transition"
-          >
-            Chat on WhatsApp
-            <FaWhatsapp className="text-xl" />
-          </a>
+          {/* Buttons */}
+          <div className="flex flex-col md:flex-row items-center gap-5">
+            <a
+              href="mailto:sophire33@gmail.com"
+              className="flex gap-2 mt-6 bg-primary-foreground text-primary text-center border border-primary rounded-full px-6 py-3 font-medium shadow-[0_0_10px_hsl(var(--color-primary))] hover:scale-105 transition"
+            >
+              Send Me an Email
+              <Mail />
+            </a>
+
+            <a
+              href="https://wa.me/2349160132596"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 mt-6 bg-primary-foreground text-primary text-center border border-primary rounded-full px-6 py-3 font-medium shadow-[0_0_10px_hsl(var(--color-primary))] hover:scale-105 transition"
+            >
+              Chat on WhatsApp
+              <FaWhatsapp className="text-xl" />
+            </a>
           </div>
-          {/* Floating Bold Animated Text */}
-          <div className="text-3xl md:text-5xl font-extrabold flex flex-wrap leading-tight">
-            {highlightedText.map((char, i) => (
-              <span
-                key={i}
-                className="text-secondary animate-float"
-                style={{
-                  textShadow: '0 0 10px hsl(var(--color-primary))',
-                  animationDelay: `${i * 0.05}s`,
-                  display: 'inline-block',
-                }}
-              >
-                {char === " " ? "\u00A0" : char}
+
+          {/* Animated Highlighted Text */}
+          <div className="text-3xl md:text-5xl font-extrabold flex flex-wrap gap-x-2 leading-tight">
+            {highlightedWords.map((word, wi) => (
+              <span key={wi} className="flex whitespace-nowrap">
+                {word.split("").map((char, i) => (
+                  <motion.span
+                    key={i}
+                    variants={letterVariants}
+                    initial="hidden"
+                    animate="visible"
+                    transition={{
+                      duration: 0.05,
+                      delay: (wi * 10 + i) * 0.05,
+                    }}
+                    className="text-secondary"
+                    style={{
+                      textShadow: "0 0 10px hsl(var(--color-primary))",
+                      display: "inline-block",
+                    }}
+                  >
+                    {char}
+                  </motion.span>
+                ))}
               </span>
             ))}
           </div>

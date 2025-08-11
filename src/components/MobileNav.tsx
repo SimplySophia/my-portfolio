@@ -11,7 +11,7 @@ interface MobileNavProps {
 export const MobileNavToggle = ({ open, setOpen }: MobileNavProps) => (
   <button
     onClick={() => setOpen(!open)}
-    className="text-primary flex items-center gap-2 border border-primary px-3 py-1 rounded-md relative z-[999] hover:bg-primary/10 transition-colors"
+    className="text-primary flex items-center gap-2 border border-primary px-2 py-1 rounded-md relative z-[999] hover:bg-primary/10 transition-colors"
   >
     {open ? <X /> : <Menu />}
     {open ? "Close" : "Connect"}

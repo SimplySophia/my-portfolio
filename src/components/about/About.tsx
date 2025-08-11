@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import Image from "next/image";
 import SectionHeading from "../helper/SectionHeading";
+import AnimatedText from "../helper/AnimatedText";
 
 const AboutMe = () => {
   const ref = useRef(null);
@@ -22,15 +23,9 @@ const AboutMe = () => {
     }
   }, [isInView, textControls, imageControls]);
 
-  // Animation variants for each letter
-  const letterVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
+  
 
-  // Words for the heading
-  const words = ["Hard-Hitting", "Frontend", "Developer"];
-
+  
   return (
     <section
       aria-labelledby="about-heading"
@@ -53,31 +48,12 @@ const AboutMe = () => {
             <div className="w-full max-w-2xl mx-auto flex flex-col items-start gap-3 px-2 md:px-8 py-11">
               
               {/* Floating Bold Animated Heading */}
-              <div className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold flex flex-wrap gap-x-2 leading-tight">
-                {words.map((word, wi) => (
-                  <span key={wi} className="flex whitespace-nowrap">
-                    {word.split("").map((char, i) => (
-                      <motion.span
-                        key={i}
-                        variants={letterVariants}
-                        initial="hidden"
-                        animate="visible"
-                        transition={{
-                          duration: 0.05,
-                          delay: (wi * 10 + i) * 0.05,
-                        }}
-                        className="text-secondary"
-                        style={{
-                          textShadow: "0 0 10px hsl(var(--color-primary))",
-                          display: "inline-block",
-                        }}
-                      >
-                        {char}
-                      </motion.span>
-                    ))}
-                  </span>
-                ))}
-              </div>
+              <AnimatedText
+               text="Hard-Hitting Frontend Developer"
+               className="text-3xl md:text-5xl font-extrabold text-secondary"
+               float={true}
+                
+              />
 
               {/* Paragraphs */}
               <motion.p

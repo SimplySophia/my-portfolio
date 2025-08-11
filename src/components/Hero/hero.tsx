@@ -5,6 +5,7 @@ import { Mail, Send } from "lucide-react";
 import Clock from "../Clock";
 import Growth from "../growth/growth";
 import { motion } from "framer-motion";
+import AnimatedText from "../helper/AnimatedText";
 
 const words = [
   "I", "build", "web", "stuff", "that", "makes", "you", "go",
@@ -34,7 +35,6 @@ const scrollToSection = (id: string) => {
   };
 
 const Hero = () => {
-  const highlightedText = "Hello World!".split("");
 
   return (
     <section
@@ -53,21 +53,11 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
         >
           {/* Floating Bold Animated Text */}
-          <div className="text-3xl md:text-5xl font-extrabold flex flex-wrap leading-tight">
-            {highlightedText.map((char, i) => (
-              <span
-                key={i}
-                className="text-secondary animate-float"
-                style={{
-                  textShadow: '0 0 10px hsl(var(--color-primary))',
-                  animationDelay: `${i * 0.05}s`,
-                  display: 'inline-block',
-                }}
-              >
-                {char === " " ? "\u00A0" : char}
-              </span>
-            ))}
-          </div>
+          <AnimatedText 
+            text="Hello World"
+            className="text-3xl md:text-5xl font-extrabold text-secondary"
+            float={true}
+           />
 
           {/* Staggered Paragraph Animation */}
           <motion.div

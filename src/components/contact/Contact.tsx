@@ -3,28 +3,9 @@
 import { FaWhatsapp } from "react-icons/fa";
 import SectionHeading from "../helper/SectionHeading";
 import { Mail } from "lucide-react";
-import { motion } from "framer-motion";
+import AnimatedText from "../helper/AnimatedText";
 
 const ContactPage = () => {
-  // Split into words instead of characters
-  const highlightedWords = [
-    "I",
-    "engineer",
-    "web",
-    "magic",
-    "that",
-    "clicks",
-    "before",
-    "you",
-    "know",
-    "why."
-  ];
-
-  const letterVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
-
   return (
     <section
       aria-labelledby="contact-heading"
@@ -67,32 +48,12 @@ const ContactPage = () => {
             </a>
           </div>
 
-          {/* Animated Highlighted Text */}
-          <div className="text-3xl md:text-5xl font-extrabold flex flex-wrap gap-x-2 leading-tight">
-            {highlightedWords.map((word, wi) => (
-              <span key={wi} className="flex whitespace-nowrap">
-                {word.split("").map((char, i) => (
-                  <motion.span
-                    key={i}
-                    variants={letterVariants}
-                    initial="hidden"
-                    animate="visible"
-                    transition={{
-                      duration: 0.05,
-                      delay: (wi * 10 + i) * 0.05,
-                    }}
-                    className="text-secondary"
-                    style={{
-                      textShadow: "0 0 10px hsl(var(--color-primary))",
-                      display: "inline-block",
-                    }}
-                  >
-                    {char}
-                  </motion.span>
-                ))}
-              </span>
-            ))}
-          </div>
+          {/* Animated Floating Text */}
+          <AnimatedText
+            text="I engineer web magic that clicks before you know why."
+            className="text-3xl md:text-5xl font-extrabold text-secondary"
+            float={true}
+          />
         </div>
       </div>
     </section>

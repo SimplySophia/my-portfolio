@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { MobileNavOverlay, MobileNavToggle } from "./MobileNav";
+import ColorSwitcher from "./ColorSwitcher";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -17,15 +18,22 @@ const Navbar = () => {
           </span>
           /&gt;
         </Link>
-
+       <div className="flex items-center gap-4">
         {/* Hamburger Toggle */}
         <div className="lg:hidden">
           <MobileNavToggle open={open} setOpen={setOpen} />
         </div>
+
+        {/* 👇 Theme Toggle only visible on mobile */}
+      <div className="block lg:hidden">
+        <ColorSwitcher />
+      </div>
+       </div>
       </div>
 
       {/* Fullscreen Overlay */}
       <MobileNavOverlay open={open} setOpen={setOpen} />
+
     </>
   );
 };

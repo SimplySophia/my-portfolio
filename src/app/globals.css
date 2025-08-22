@@ -121,6 +121,10 @@
   body {
     @apply bg-background text-foreground;
   }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-semibold;
+  }
+
 }
 
 :root {
@@ -241,4 +245,9 @@
 
 .animate-float {
   animation: float 3s ease-in-out infinite;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
 }

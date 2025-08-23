@@ -20,7 +20,7 @@ export default function CircleRipple() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
-            className={`absolute rounded-full border-1 border-primary ${circle.size} ${circle.animate}`}
+            className={`absolute rounded-full border-1 border-secondary ${circle.size} ${circle.animate}`}
           />
         ))}
       </div>

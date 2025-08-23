@@ -50,7 +50,7 @@ const AboutMe = () => {
               {/* Floating Bold Animated Heading */}
               <AnimatedText
                text="Hard-Hitting Frontend Developer"
-               className="text-3xl md:text-5xl font-extrabold text-secondary"
+               className="text-3xl md:text-5xl font-extrabold text-[#262627]"
                float={true}
                 
               />

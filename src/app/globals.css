@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -118,12 +116,7 @@
   * {
     @apply border-border outline-ring/50;
   }
-  body {
-    @apply bg-background text-foreground;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-sans font-semibold;
-  }
+  
 
 }
 
@@ -250,4 +243,5 @@
 html, body {
   overflow-x: hidden;
   width: 100%;
+  background-color: rgb(17, 17, 17);
 }

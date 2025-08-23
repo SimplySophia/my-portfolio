@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="flex justify-between items-center px-4 sm:px-8 py-2 bg-white/70 dark:bg-slate-800/80 backdrop-blur fixed top-0 left-0 shadow-md w-full max-w-full z-50">
+      <div className="flex justify-between items-center px-4 sm:px-8 py-2 bg-white/70 dark:bg-slate-800/80 backdrop-blur fixed top-0 left-0 shadow-md w-full max-w-full z-50 text-white">
         <Link href="/" className="text-2xl font-bold">
           &lt;
           <span className="text-primary">

@@ -15,7 +15,7 @@ const SectionHeading = ({ heading, scrollToId }: Props) => {
   return (
     <div className="relative flex flex-col items-left pt-2 pb-4">
       {/* Heading */}
-      <div className="border-2 border-primary shadow-[0_0_10px_hsl(var(--color-primary))] rounded-full w-[150px] text-left ">
+      <div className="border-2 border-secondary shadow-[0_0_10px_hsl(var(--color-primary))] rounded-full w-[150px] text-left text-gray-50">
         <h3 className="text-sm sm:text-xl py-1 text-center">{heading}</h3>
       </div>
 

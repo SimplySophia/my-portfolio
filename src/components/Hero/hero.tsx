@@ -1,9 +1,9 @@
 "use client";
 
 import { Mail, Send } from "lucide-react";
-            import SectionHeading from "../helper/SectionHeading";
+import SectionHeading from "../helper/SectionHeading";
 import Clock from "../Clock";
-import Growth from "../growth/growth";
+import Growth from "../growth/growth"
 import { motion } from "framer-motion";
 import AnimatedText from "../helper/AnimatedText";
 
@@ -55,7 +55,7 @@ const Hero = () => {
           {/* Floating Bold Animated Text */}
           <AnimatedText 
             text="Hello World"
-            className="text-3xl md:text-5xl font-extrabold text-secondary"
+            className="text-3xl md:text-5xl font-extrabold text-[#262627]"
             float={true}
            />
 

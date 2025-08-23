@@ -54,7 +54,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ isOpen }) => {
       {/* Sidebar */}
       <aside
   className={`
-    bg-secondary border-2 border-primary z-50
+    bg-[#262627] border-2 border-secondary z-50
     shadow-[0_0_10px_hsl(var(--color-primary))]
     p-8 w-[70%] max-w-xs fixed top-0 bottom-0 left-0 rounded-md
     transform transition-transform duration-300 ease-in-out

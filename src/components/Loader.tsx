@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Loader = () => {
   return (
-    <div className="fixed inset-0 flex flex-col items-center justify-center bg-background z-[9999]">
+    <div className="fixed inset-0 flex flex-col items-center justify-center bg-secondary-foreground z-[9999]">
       {/* Logo / Image */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
@@ -36,7 +36,7 @@ const Loader = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ repeat: Infinity, duration: 1.5 }}
-        className="mt-2 text-gray-500 dark:text-gray-400"
+        className="mt-2 text-gray-500 md:text-lg text-center px-4 max-w-md"
       >
         Thanks for stopping by! Whether you’re a recruiter, collaborator, or fellow
         developer, I’m glad you’re here. Loading your experience...

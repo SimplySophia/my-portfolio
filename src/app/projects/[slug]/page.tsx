@@ -1,4 +1,4 @@
-// src/app/projects/[slug]/page.tsx
+'"use client";'
 import { projects } from "@/data/projectData";
 import Link from "next/link";
 import Image from "next/image";
@@ -12,11 +12,13 @@ const socialLinks = [
   { href: "/twitter", icon: <SiX className="w-4 h-4" /> },
 ];
 
-type Props = {
-  params: { slug: string };
+type ProjectPageProps = {
+  params: {
+    slug: string;
+  };
 };
 
-export default function ProjectPage({ params }: Props) {
+export default async function ProjectPage({ params }: ProjectPageProps) {
   const project = projects.find((p) => p.slug === params.slug);
 
   if (!project) {
@@ -31,12 +33,17 @@ export default function ProjectPage({ params }: Props) {
   }
 
   return (
-    <div className="max-w-4xl mx-auto p-6 space-y-6 text-gray-400">
+    <div className="max-w-4xl mx-auto p-6 mt-12 space-y-6 text-gray-400">
       {/* Breadcrumbs */}
       <div className="text-sm text-gray-400">
-        <Link href="/" className="hover:underline">🏠 Home</Link> &gt;{" "}
-        <Link href="/projects" className="hover:underline">Projects</Link> &gt;{" "}
-        <span className="font-semibold">{project.title}</span>
+        <Link href="/" className="hover:underline">
+          🏠 Home
+        </Link>{" "}
+        &gt;{" "}
+        <Link href="/projects" className="hover:underline">
+          Projects
+        </Link>{" "}
+        &gt; <span className="font-semibold">{project.title}</span>
       </div>
 
       {/* Project Image */}
@@ -53,85 +60,95 @@ export default function ProjectPage({ params }: Props) {
 
       {/* Sections */}
       <div className="space-y-4">
-        <section className="border-b-1 border-gray-200 pb-6">
-          <h2 className="text-xl font-semibold">Task</h2>
-          <p>{project.task}</p>
-        </section>
+        {project.task && (
+          <section className="border-b border-gray-200 pb-6">
+            <h2 className="text-xl font-semibold">Task</h2>
+            <p>{project.task}</p>
+          </section>
+        )}
 
-        <section className="border-b-1 border-gray-200 pb-6">
-          <h2 className="text-xl font-semibold">Challenges</h2>
-          <p>{project.challenges}</p>
-        </section>
+        {project.challenges && (
+          <section className="border-b border-gray-200 pb-6">
+            <h2 className="text-xl font-semibold">Challenges</h2>
+            <p>{project.challenges}</p>
+          </section>
+        )}
 
-        <section className="border-b-1 border-gray-200 pb-6">
-          <h2 className="text-xl font-semibold">Solutions</h2>
-          <p>{project.solutions}</p>
-        </section>
+        {project.solutions && (
+          <section className="border-b border-gray-200 pb-6">
+            <h2 className="text-xl font-semibold">Solutions</h2>
+            <p>{project.solutions}</p>
+          </section>
+        )}
 
-        <section className="border-b-1 border-gray-200 pb-6">
-          <h2 className="text-xl font-semibold">Highlights</h2>
-          <ul className="list-disc pl-5">
-            {project.highlights.map((h, i) => (
-              <li key={i}>{h}</li>
-            ))}
-          </ul>
-        </section>
+        {project.highlights && (
+          <section className="border-b border-gray-200 pb-6">
+            <h2 className="text-xl font-semibold">Highlights</h2>
+            <ul className="list-disc pl-5">
+              {project.highlights.map((h, i) => (
+                <li key={i}>{h}</li>
+              ))}
+            </ul>
+          </section>
+        )}
 
-        <section className="border-b-1 border-gray-200 pb-6">
-          <h2 className="text-xl font-semibold">Conclusion</h2>
-          <p>{project.conclusion}</p>
-        </section>
+        {project.conclusion && (
+          <section className="border-b border-gray-200 pb-6">
+            <h2 className="text-xl font-semibold">Conclusion</h2>
+            <p>{project.conclusion}</p>
+          </section>
+        )}
 
         {/* ---- Code & Live Section ---- */}
-<div className="mt-12 text-center">
-  <p className="font-semibold mb-4">
-    Explore live project and source code:
-  </p>
-  <div className="flex justify-center gap-4 mb-8">
-    {/* Code Button (show only if repo exists) */}
-    {project.repo && (
-      <a
-        href={project.repo}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-2 px-6 py-3 border border-gray-500 rounded-full hover:bg-gray-800 transition"
-      >
-        <FaGithub size={20} />
-        Code
-      </a>
-    )}
+        <div className="mt-12 text-center">
+          <p className="font-semibold mb-4">
+            Explore live project and source code:
+          </p>
+          <div className="flex justify-center gap-4 mb-8">
+            {/* Code Button (show only if repo exists) */}
+            {project.repo && (
+              <a
+                href={project.repo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-6 py-3 border border-gray-500 rounded-full hover:bg-gray-800 transition"
+              >
+                <FaGithub size={20} />
+                Code
+              </a>
+            )}
 
-    {/* Live Button */}
-    <a
-      href={project.link}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center gap-2 px-6 py-3 bg-primary rounded-full hover:bg-secondary-foreground transition"
-    >
-      <ExternalLink size={20} />
-      Live
-    </a>
-  </div>
+            {/* Live Button */}
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-6 py-3 text-white bg-primary rounded-full hover:bg-secondary-foreground transition"
+            >
+              <ExternalLink size={20} />
+              Live
+            </a>
+          </div>
 
-  {/* Share Section */}
-  <p className="font-semibold">
-    <span className="text-gray-400">
-      Are you impressed and wanna reach out?
-    </span>
-  </p>
-  <div className="flex items-center justify-center gap-8 mt-6">
-    {socialLinks.map(({ href, icon }, idx) => (
-      <Link
-        key={idx}
-        href={href}
-        className="border-primary shadow-[0_0_10px_hsl(var(--color-primary))] w-[40px] h-[40px] rounded-full p-2 hover:scale-125 transition-transform flex items-center justify-center text-white"
-      >
-        {icon}
-      </Link>
-    ))}
-  </div>
-</div>
-</div>
+          {/* Share Section */}
+          <p className="font-semibold">
+            <span className="text-gray-400">
+              Are you impressed and wanna reach out?
+            </span>
+          </p>
+          <div className="flex items-center justify-center gap-8 mt-6">
+            {socialLinks.map(({ href, icon }, idx) => (
+              <Link
+                key={idx}
+                href={href}
+                className="border-primary shadow-[0_0_10px_hsl(var(--color-primary))] w-[40px] h-[40px] rounded-full p-2 hover:scale-125 transition-transform flex items-center justify-center text-white"
+              >
+                {icon}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

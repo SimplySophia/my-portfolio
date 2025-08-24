@@ -13,13 +13,12 @@ const socialLinks = [
 ];
 
 type ProjectPageProps = {
-  params: {
-    slug: string;
-  };
+  params: { slug: string }; // ✅ Keep it simple
 };
 
-export default async function ProjectPage({ params }: ProjectPageProps) {
+export default function ProjectPage({ params }: ProjectPageProps) {
   const project = projects.find((p) => p.slug === params.slug);
+
 
   if (!project) {
     return (

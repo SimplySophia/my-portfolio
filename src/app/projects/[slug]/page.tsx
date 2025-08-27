@@ -1,26 +1,25 @@
-'"use client";'
+// src/app/projects/[slug]/page.tsx
 import { projects } from "@/data/projectData";
 import Link from "next/link";
 import Image from "next/image";
-import { ExternalLink } from "lucide-react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { SiX } from "react-icons/si";
 
+// Social icons array
 const socialLinks = [
   { href: "/linkedin", icon: <FaLinkedin className="w-4 h-4" /> },
   { href: "/github", icon: <FaGithub className="w-4 h-4" /> },
   { href: "/twitter", icon: <SiX className="w-4 h-4" /> },
 ];
 
-
+// Typing for props: params is now a Promise, matching Next.js 15 App Router behavior
 type ProjectPageProps = {
-  params: {
-    slug: string;
-  };
+  params: Promise<{ slug: string }>;
 };
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
-  const project = projects.find((p) => p.slug === params.slug);
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
     return (
@@ -56,98 +55,74 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         className="rounded-lg shadow-lg w-full"
       />
 
-      {/* Title */}
+      {/* Project Title */}
       <h1 className="text-4xl font-bold">{project.title}</h1>
 
-      {/* Sections */}
+      {/* Project Sections */}
       <div className="space-y-4">
-        {project.task && (
-          <section className="border-b border-gray-200 pb-6">
-            <h2 className="text-xl font-semibold">Task</h2>
-            <p>{project.task}</p>
-          </section>
-        )}
-
-        {project.challenges && (
-          <section className="border-b border-gray-200 pb-6">
-            <h2 className="text-xl font-semibold">Challenges</h2>
-            <p>{project.challenges}</p>
-          </section>
-        )}
-
-        {project.solutions && (
-          <section className="border-b border-gray-200 pb-6">
-            <h2 className="text-xl font-semibold">Solutions</h2>
-            <p>{project.solutions}</p>
-          </section>
-        )}
-
-        {project.highlights && (
-          <section className="border-b border-gray-200 pb-6">
-            <h2 className="text-xl font-semibold">Highlights</h2>
-            <ul className="list-disc pl-5">
-              {project.highlights.map((h, i) => (
-                <li key={i}>{h}</li>
-              ))}
-            </ul>
-          </section>
-        )}
-
-        {project.conclusion && (
-          <section className="border-b border-gray-200 pb-6">
-            <h2 className="text-xl font-semibold">Conclusion</h2>
-            <p>{project.conclusion}</p>
-          </section>
-        )}
-
-        {/* ---- Code & Live Section ---- */}
-        <div className="mt-12 text-center">
-          <p className="font-semibold mb-4">
-            Explore live project and source code:
-          </p>
-          <div className="flex justify-center gap-4 mb-8">
-            {/* Code Button (show only if repo exists) */}
-            {project.repo && (
-              <a
-                href={project.repo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-6 py-3 border border-gray-500 rounded-full hover:bg-gray-800 transition"
-              >
-                <FaGithub size={20} />
-                Code
-              </a>
-            )}
-
-            {/* Live Button */}
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-6 py-3 text-white bg-primary rounded-full hover:bg-secondary-foreground transition"
-            >
-              <ExternalLink size={20} />
-              Live
-            </a>
-          </div>
-
-          {/* Share Section */}
-          <p className="font-semibold">
-            <span className="text-gray-400">
-              Are you impressed and wanna reach out?
-            </span>
-          </p>
-          <div className="flex items-center justify-center gap-8 mt-6">
-            {socialLinks.map(({ href, icon }, idx) => (
-              <Link
-                key={idx}
-                href={href}
-                className="border-primary shadow-[0_0_10px_hsl(var(--color-primary))] w-[40px] h-[40px] rounded-full p-2 hover:scale-125 transition-transform flex items-center justify-center text-white"
-              >
-                {icon}
-              </Link>
+        <section>
+          <h2 className="text-xl font-semibold">Task</h2>
+          <p>{project.task}</p>
+        </section>
+        <section>
+          <h2 className="text-xl font-semibold">Challenges</h2>
+          <p>{project.challenges}</p>
+        </section>
+        <section>
+          <h2 className="text-xl font-semibold">Solutions</h2>
+          <p>{project.solutions}</p>
+        </section>
+        <section>
+          <h2 className="text-xl font-semibold">Highlights</h2>
+          <ul className="list-disc pl-5">
+            {project.highlights.map((h, i) => (
+              <li key={i}>{h}</li>
             ))}
-          </div>
+          </ul>
+        </section>
+        <section>
+          <h2 className="text-xl font-semibold">Conclusion</h2>
+          <p>{project.conclusion}</p>
+        </section>
+      </div>
+
+      {/* Action Buttons */}
+      <div className="mt-8 flex gap-4">
+        {project.link && (
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 bg-primary text-black rounded-lg hover:bg-primary/90 transition"
+          >
+            Live Demo
+          </a>
+        )}
+        {project.repo && (
+          <a
+            href={project.repo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition"
+          >
+            GitHub
+          </a>
+        )}
+      </div>
+
+      {/* Social Sharing Section */}
+      <div className="mt-8 text-center">
+        <p className="font-semibold mb-4">Connect or say hi:</p>
+        <div className="flex justify-center gap-4">
+          {socialLinks.map(({ href, icon }, idx) => (
+            <Link
+              key={idx}
+              href={href}
+              className="border-primary shadow-[0_0_10px_hsl(var(--color-primary))] w-10 h-10 rounded-full p-2 hover:scale-125 transition-transform flex items-center justify-center text-white"
+            >
+              {icon}
+            </Link>
+          ))}
         </div>
       </div>
     </div>

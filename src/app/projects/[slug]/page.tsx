@@ -12,13 +12,15 @@ const socialLinks = [
   { href: "/twitter", icon: <SiX className="w-4 h-4" /> },
 ];
 
+
 type ProjectPageProps = {
-  params: { slug: string }; // ✅ Keep it simple
+  params: {
+    slug: string;
+  };
 };
 
-export default function ProjectPage({ params }: ProjectPageProps) {
+export default async function ProjectPage({ params }: ProjectPageProps) {
   const project = projects.find((p) => p.slug === params.slug);
-
 
   if (!project) {
     return (

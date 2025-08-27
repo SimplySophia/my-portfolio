@@ -60,34 +60,34 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
       {/* Project Sections */}
       <div className="space-y-4">
-        <section>
-          <h2 className="text-xl font-semibold">Task</h2>
+        <section className="border-b border-gray-200 pb-6">
+          <h2 className="text-xl font-semibold">Task:</h2>
           <p>{project.task}</p>
         </section>
-        <section>
-          <h2 className="text-xl font-semibold">Challenges</h2>
+        <section className="border-b border-gray-200 pb-6">
+          <h2 className="text-xl font-semibold">Challenges:</h2>
           <p>{project.challenges}</p>
         </section>
-        <section>
-          <h2 className="text-xl font-semibold">Solutions</h2>
+        <section className="border-b border-gray-200 pb-6">
+          <h2 className="text-xl font-semibold">Solutions:</h2>
           <p>{project.solutions}</p>
         </section>
-        <section>
-          <h2 className="text-xl font-semibold">Highlights</h2>
+        <section className="border-b border-gray-200 pb-6">
+          <h2 className="text-xl font-semibold">Highlights:</h2>
           <ul className="list-disc pl-5">
             {project.highlights.map((h, i) => (
               <li key={i}>{h}</li>
             ))}
           </ul>
         </section>
-        <section>
-          <h2 className="text-xl font-semibold">Conclusion</h2>
+        <section className="border-b border-gray-200 pb-6">
+          <h2 className="text-xl font-semibold">Conclusion:</h2>
           <p>{project.conclusion}</p>
         </section>
       </div>
 
       {/* Action Buttons */}
-      <div className="mt-8 flex gap-4">
+      <div className="mt-8 flex gap-4 md:gap-8 items-center justify-center">
         {project.link && (
           <a
             href={project.link}

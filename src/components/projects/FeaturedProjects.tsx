@@ -33,13 +33,13 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    title: "Tour",
-    description: "A travel tour app that allows users to explore and book tours.",
-    image: "/images/tour.png",
-    link: "https://travel-tourcast.vercel.app/",
-    repo: "https://github.com/SimplySophia/tourcast",
+    title: "InkCore",
+    description: "An AI powered SaaS Product for Blog Posts and Social Media Content.",
+    image: "/images/inkcore.jpg",
+    link: "https://inkcore.vercel.app/",
+    repo: "https://github.com/SimplySophia/inkcore",
     tools: ["Nextjs", "TailwindCSS", "TypeScript", "framer"],
-    slug: "tour",
+    slug: "inkcore",
   },
   {
     id: 3,
@@ -72,7 +72,7 @@ const fadeInVariant = {
     transition: {
       delay: i * 0.3,
       duration: 0.6,
-      type: "spring",
+      type: "spring" as const, // Ensure type is compatible
     },
   }),
 };

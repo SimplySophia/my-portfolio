@@ -1,5 +1,3 @@
-// src/data/projectsData.ts
-
 
 export type Project = {
   title: string;
@@ -38,7 +36,7 @@ export const projects: Project[] = [
   {
     title: "InkCore",
     description: "An AI powered SaaS Product for Blog Posts and Social Media Content.",
-    image: "/images/tour.png",
+    image: "/images/inkcore.jpg",
     link: "https://inkcore.vercel.app/",
     repo: "https://github.com/SimplySophia/Villa",
     tools: ["Nextjs", "TailwindCSS", "TypeScript", "custom AI API"],

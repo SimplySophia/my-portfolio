@@ -88,13 +88,14 @@ const AboutMe = () => {
             animate={imageControls}
             initial={{ opacity: 0, x: 60 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
+            className="bg-(--color-primary) w-[300px] h-[300px] mx-auto rounded-b-full"
           >
             <Image
-              src="/images/mee.png"
+              src="/images/me.png"
               alt="me"
               width={300}
-              height={200}
-              className="rounded-full shadow-lg"
+              height={100}
+              className="rounded-full shadow-lg h-70 w-50 mx-auto mt-16"
             />
           </motion.div>
         </div>

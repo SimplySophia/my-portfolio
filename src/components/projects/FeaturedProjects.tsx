@@ -96,7 +96,7 @@ const FeaturedProjects = () => {
           {visibleProjects.map((project, index) => (
             <motion.div
               key={index}
-              className="grid md:grid-cols-2 gap-8 items-center bg-[#262627] rounded-3xl shadow-lg p-6 md:p-10 border border-primary/20"
+              className="grid md:grid-cols-2 gap-8 items-center bg-(--color-bg) shadow-[0_10px_30px_rgba(122,31,255,0.25)] rounded-3xl p-6 md:p-10 border border-(--color-secondary)"
               variants={fadeInVariant}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
@@ -128,8 +128,8 @@ const FeaturedProjects = () => {
                 </div>
 
                 {/* Title + Description */}
-                <h3 className="text-2xl font-bold text-white">{project.title}</h3>
-                <p className="text-gray-300 text-base leading-relaxed">
+                <h3 className="text-2xl font-bold text-gray-500 ">{project.title}</h3>
+                <p className="text-gray-500 text-base leading-relaxed">
                   {project.description}
                 </p>
 
@@ -149,7 +149,7 @@ const FeaturedProjects = () => {
                       href={project.repo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 border border-gray-400 text-gray-200 px-4 py-2 rounded-lg hover:bg-white/10 transition"
+                      className="flex items-center gap-2 border border-gray-400 text-gray-500 px-4 py-2 rounded-lg hover:bg-white/10 transition"
                     >
                       <FaGithub className="w-4 h-4" /> Code
                     </a>

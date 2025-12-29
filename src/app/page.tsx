@@ -40,7 +40,7 @@ export default function Home() {
   return (
     <>
       <CircleRipple />
-      <div className="flex flex-col lg:flex-row min-h-screen">
+      <div className="flex flex-col lg:flex-row min-h-screen bg-(--color-bg) text-(--color-text-primary) transition-colors duration-300">
         {/* Sticky Sidebar for Desktop */}
         <aside className="hidden lg:block lg:sticky top-0 h-screen w-64 text-white">
           <HeroSection isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />

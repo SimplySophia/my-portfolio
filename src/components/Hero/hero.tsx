@@ -82,18 +82,18 @@ const Hero = () => {
           </motion.div>
 
           <motion.div
-            className="flex flex-row md:items-center items-start mt-4 gap-6"
+            className="flex flex-row md:items-center items-start mt-4 gap-6 text-(--color-primary)"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.4 }}
           >
             <button
             onClick={() => scrollToSection("contact")}
-              className="text-primary font-bold text-xl flex items-center gap-2 hover:underline"
+              className="font-bold text-xl flex items-center gap-2 hover:underline"
             >
               Let&apos;s Talk
-              <div className="border-3 border-primary shadow-[0_0_10px_hsl(var(--color-primary))] w-[40px] h-[40px] rounded-full p-1.5">
-                <Send className="bg-base-100 animate-sophia-bounce" />
+              <div className="border-3 w-10 h-10 rounded-full p-1.5">
+                <Send className="animate-sophia-bounce" />
               </div>
             </button>
 
@@ -102,11 +102,11 @@ const Hero = () => {
               download
               target="_blank"
               rel="noopener noreferrer"
-             className="text-primary font-bold text-xl flex items-center gap-2 hover:underline"
+             className="font-bold text-xl flex items-center gap-2 hover:underline"
             >
               Resume
-              <div className="border-3 border-primary shadow-[0_0_10px_hsl(var(--color-primary))] w-[40px] h-[40px] rounded-full p-1.5">
-                <Mail className="bg-base-100 animate-sophia-bounce" />
+              <div className="border-3 border-primary w-10 h-10 rounded-full p-1.5">
+                <Mail className=" animate-sophia-bounce" />
               </div>
             </a>
           </motion.div>

@@ -1,4 +1,4 @@
-'use client'
+/*'use client'
 
 import { useEffect, useState } from 'react'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
@@ -52,4 +52,4 @@ export default function ColorSwitcher() {
       </PopoverContent>
     </Popover>
   )
-}
+}*/

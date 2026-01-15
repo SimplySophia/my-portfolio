@@ -11,7 +11,7 @@ const circles = [
 
 export default function CircleStack() {
   return (
-    <div className="fixed bottom-6 right-6 flex flex-col items-center gap-3 z-50">
+    <div className="fixed bottom-6 right-6 flex flex-col items-center gap-3 -z-50">
       {circles.map((circle, index) => (
         <motion.div
           key={index}

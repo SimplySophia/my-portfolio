@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
@@ -19,7 +20,9 @@ interface ExperienceItem {
 const Experience = () => {
   const { isDark } = useTheme();
   const [visibleItems, setVisibleItems] = useState<number[]>([]);
+  const [headerVisible, setHeaderVisible] = useState(false);
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const headerRef = useRef<HTMLDivElement>(null);
 
   const experiences: ExperienceItem[] = [
     {
@@ -71,6 +74,21 @@ const Experience = () => {
   ];
 
   useEffect(() => {
+    // Header observer
+    const headerObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setHeaderVisible(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (headerRef.current) {
+      headerObserver.observe(headerRef.current);
+    }
+
+    // Items observers
     const observers = itemRefs.current.map((ref, index) => {
       const observer = new IntersectionObserver(
         ([entry]) => {
@@ -89,6 +107,7 @@ const Experience = () => {
     });
 
     return () => {
+      headerObserver.disconnect();
       observers.forEach((observer) => observer.disconnect());
     };
   }, []);
@@ -101,7 +120,12 @@ const Experience = () => {
     >
       <div className="max-w-5xl mx-auto">
         {/* Section Header */}
-        <div className="mb-20">
+        <div 
+          ref={headerRef}
+          className={`mb-20 transition-all duration-1000 ${
+            headerVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}
+        >
           <p className={`text-sm font-semibold tracking-wider mb-4 ${
             isDark ? 'text-[#F472B6]' : 'text-[#F472B6]'
           }`}>

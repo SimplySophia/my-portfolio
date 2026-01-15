@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import AboutMe from '@/components/about/About';
-import Skills from '@/components/skills/skills';
 import FeaturedProjects from '@/components/projects/FeaturedProjects';
 import ContactPage from '@/components/contact/Contact';
 import Hero from '@/components/Hero/hero';
@@ -45,7 +44,6 @@ export default function Home() {
           <div>
             <AboutMe />
             <Experience />
-            <Skills />
             <FeaturedProjects />
             <ContactPage />
           </div>

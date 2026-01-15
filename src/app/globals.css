@@ -1,9 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* =========================
-   LIGHT MODE (DEFAULT)
-   ========================= */
+
 :root {
   --color-primary: #a855f7;   /* REAL purple */
   --color-secondary: #c084fc;

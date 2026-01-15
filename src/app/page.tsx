@@ -8,6 +8,7 @@ import ContactPage from '@/components/contact/Contact';
 import Hero from '@/components/Hero/hero';
 import CircleRipple from '@/components/helper/CircleRipple';
 import Loader from '@/components/Loader';
+import Experience from "@/components/Experience";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -43,6 +44,7 @@ export default function Home() {
           <Hero />
           <div>
             <AboutMe />
+            <Experience />
             <Skills />
             <FeaturedProjects />
             <ContactPage />

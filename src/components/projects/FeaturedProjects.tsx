@@ -100,7 +100,7 @@ const Projects = () => {
       }`;
 
   return (
-    <section id="projects" className={`min-h-screen relative py-32 px-8 transition-colors duration-500 ${isDark ? 'bg-[#0A0A0A]' : 'bg-white'}`}>
+    <section id="projects" className={`min-h-screen relative py-12 px-8 transition-colors duration-500 ${isDark ? 'bg-[#0A0A0A]' : 'bg-white'}`}>
       <div className="max-w-6xl mx-auto">
         <div ref={headerRef} className={`mb-20 transition-all duration-1000 ${headerVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <p className="text-sm font-semibold tracking-wider mb-4 text-[#F472B6]">FEATURED WORK</p>
@@ -141,8 +141,8 @@ const Projects = () => {
                 </Link>
 
                 <div className="flex gap-4 mt-2">
-                  {project.repo && <a href={project.repo} target="_blank" rel="noopener noreferrer" className={btnClass()}><Github className="w-4 h-4" /> Code</a>}
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" className={btnClass(true)}><ExternalLink className="w-4 h-4" /> Live Demo</a>
+                  {project.repo && <a href={project.repo} target="_blank" rel="noopener noreferrer" className={btnClass()}><Github className="w-4 h-4 text-[#F472B6]" /> <span className="ml-2 text-[#F472B6]">Code</span></a>}
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className={btnClass(true)}><ExternalLink className="w-4 h-4 text-white" /><span className="ml-2 text-white">Live Demo</span></a>
                 </div>
               </div>
             </div>
@@ -159,7 +159,6 @@ const Projects = () => {
           </div>
         )}
       </div>
-      <div className="absolute top-1/2 right-20 w-64 h-64 bg-[#F472B6]/10 rounded-full blur-3xl -z-10"></div>
     </section>
   );
 };

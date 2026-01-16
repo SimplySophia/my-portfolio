@@ -8,6 +8,7 @@ import Hero from '@/components/Hero/hero';
 import CircleRipple from '@/components/helper/CircleRipple';
 import Loader from '@/components/Loader';
 import Experience from "@/components/Experience";
+import Footer from "@/components/footer/Footer";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -46,6 +47,7 @@ export default function Home() {
             <Experience />
             <FeaturedProjects />
             <ContactPage />
+            <Footer />
           </div>
         </main>
       </div>

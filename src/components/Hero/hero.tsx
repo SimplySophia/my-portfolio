@@ -122,16 +122,22 @@ const Hero = () => {
               web interfaces that scale with{' '}
               <span className="font-semibold text-[#F472B6]">real users</span>
             </p>      
-            <button
-          onClick={scrollToProjects}
-          className={`px-4 py-2 rounded-full font-semibold text-sm transition-all duration-300 ${
-            isDark
-              ? 'bg-[#F472B6] text-white hover:bg-[#F472B6]/90 hover:shadow-lg hover:shadow-[#F472B6]/50'
-              : 'bg-[#F472B6] text-white hover:bg-[#F472B6]/90 hover:shadow-lg hover:shadow-[#F472B6]/30'
-          }`}
-        >
-          View Resume
-        </button>
+            <a
+  href="/sophia-vincent.pdf" 
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <button
+    className={`px-4 py-2 rounded-full font-semibold text-sm transition-all duration-300 ${
+      isDark
+        ? 'bg-[#F472B6] text-white hover:bg-[#F472B6]/90 hover:shadow-lg hover:shadow-[#F472B6]/50'
+        : 'bg-[#F472B6] text-white hover:bg-[#F472B6]/90 hover:shadow-lg hover:shadow-[#F472B6]/30'
+    }`}
+  >
+    View Resume
+  </button>
+</a>
+
           </div>
          {/* View My Work Button */}
           <div

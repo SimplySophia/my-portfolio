@@ -61,7 +61,7 @@ const Hero = () => {
             }`}
           >
             <h1
-              className={`text-xl md:text-2xl lg:text-3xl font-bold mb-12 ${
+              className={`text-xl md:text-2xl lg:text-3xl font-bold md:mb-12 mt-12 ${
                 isDark ? 'text-white' : 'text-slate-900'
               }`}
             >
@@ -135,7 +135,7 @@ const Hero = () => {
           </div>
          {/* View My Work Button */}
           <div
-            className={`absolute top-1/2 left-8 transition-all duration-1000 delay-300 mt-16 ${
+            className={`absolute top-1/2 left-8 transition-all duration-1000 delay-300 mt-24 ${
             hasAnimated && isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             }`}
           >
